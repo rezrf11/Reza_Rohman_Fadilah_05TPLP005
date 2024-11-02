@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Karyawan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>UTS</h2>
+        <div class="user-info">
+            <img src="BILIARD.jpg" alt="User Avatar">
+            <p>Welcome, Reza</p>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showPage('dashboard')"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><span>MENU KARYAWAN</span></li>
+            <li><a href="#" onclick="showPage('karyawan')"><i class="fas fa-users"></i> Karyawan</a></li>
+            <li><a href="#" onclick="showPage('jabatan')"><i class="fas fa-briefcase"></i> Jabatan</a></li>
+            <li><a href="#" onclick="showPage('divisi')"><i class="fas fa-building"></i> Divisi</a></li>
+            <li><span>MENU ABSENSI</span></li>
+            <li><a href="#" onclick="showPage('absensi')"><i class="fas fa-calendar-check"></i> Absensi</a></li>
+            <li><a href="#" onclick="showPage('izin')"><i class="fas fa-calendar-times"></i> Izin</a></li>
+            <li><a href="#" onclick="showPage('lembur')"><i class="fas fa-clock"></i> Lembur</a></li>
+            <li><span>MENU PENGGAJIAN</span></li>
+            <li><a href="#" onclick="showPage('slip gaji')"><i class="fas fa-money"></i> Slip gaji</a></li>
+        </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <header>
+            <h1>Sistem Informasi Manajemen Karyawan</h1>
+        </header>
+        
+        <!-- Dashboard Utama -->
+        <div id="dashboard" class="page active">
+            <h2>Admin Dashboard</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <p>Data Pegawai</p>
+                    <span>13</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <p>Absensi Hari Ini</p>
+                    <span>0</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-times"></i>
+                    <p>Izin Menunggu Konfirmasi</p>
+                    <span>2</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <p>Lembur Menunggu Konfirmasi</p>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Karyawan -->
+        <div id="karyawan" class="page">
+            <h2>Data Karyawan</h2>
+            <button class="add-button">+ Tambah Karyawan</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Alamat</th>
+                        <th>Jabatan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>K001</td>
+                        <td>Rezarf</td>
+                        <td>rz@gmail.com</td>
+                        <td>Jl. Percetakan Negara No. 45</td>
+                        <td>Staff</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>K002</td>
+                        <td>yusuf</td>
+                        <td>yf@gmail.com</td>
+                        <td>Jl. Pegangsaan No. 12</td>
+                        <td>Kepala Bagian</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>K003</td>
+                        <td>Fahmi</td>
+                        <td>Fahmi@gmail.com</td>
+                        <td>Bandung</td>
+                        <td>Staff</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>K004</td>
+                        <td>Fiqri</td>
+                        <td>fiqri@gmail.com</td>
+                        <td>Demak</td>
+                        <td>Staff</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Jabatan -->
+        <div id="jabatan" class="page">
+            <h2>Data Jabatan</h2>
+            <button class="add-button">+ Tambah Jabatan</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Jabatan</th>
+                        <th>Nama Jabatan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>J001</td>
+                        <td>Staff</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>J002</td>
+                        <td>Kepala Bagian</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>J003</td>
+                        <td>Manager</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>J004</td>
+                        <td>Direktur</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Divisi -->
+        <div id="divisi" class="page">
+            <h2>Data Divisi</h2>
+            <button class="add-button">+ Tambah Divisi</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Divisi</th>
+                        <th>Nama Divisi</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>D001</td>
+                        <td>Pemasaran</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>D002</td>
+                        <td>Keuangan</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>D003</td>
+                        <td>Sumber Daya Manusia</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>D004</td>
+                        <td>IT</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Absensi -->
+        <div id="absensi" class="page">
+            <h2>Data Absensi karyawan</h2>
+            <button class="add-button">+ Tambah Absensi</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Karyawan</th>
+                        <th>Tanggal</th>
+                        <th>Lokasi absen</th>
+                        <th>Jam Masuk</th>
+                        <th>Jam Keluar</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juliana</td>
+                        <td>2024-11-01</td>
+                        <td>Kampus Merdeka</td>
+                        <td>12.30</td>
+                        <td>12.33</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bulk</td>
+                        <td>2024-11-01</td>
+                        <td>Unpam</td>
+                        <td>11.30</td>
+                        <td>12.33</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bagus</td>
+                        <td>2024-11-01</td>
+                        <td>Kantin</td>
+                        <td>7.30</td>
+                        <td>11.33</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bagas</td>
+                        <td>2024-11-01</td>
+                        <td>Rumah Sakit</td>
+                        <td>10.00</td>
+                        <td>10.33</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Izin -->
+        <div id="izin" class="page">
+            <h2>Data Izin karyawan</h2>
+            <button class="add-button">+ Tambah Izin</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Karyawan</th>
+                        <th>Izin</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Keterangan</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Moscov</td>
+                        <td>Pulang lebih awal</td>
+                        <td>2024-11-01</td>
+                        <td>15.44</td>
+                        <td>Sakit</td>
+                        <td>Menunggu Konfirmasi</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Irithel</td>
+                        <td>Datang terlambat</td>
+                        <td>2024-10-07</td>
+                        <td>13.44</td>
+                        <td>Kecelakaan</td>
+                        <td>Menunggu Konfirmasi</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Badang</td>
+                        <td>Pulang lebih awal</td>
+                        <td>2024-11-01</td>
+                        <td>14.04</td>
+                        <td>Ngantuk</td>
+                        <td>Menunggu Konfirmasi</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Jamal</td>
+                        <td>Pulang lebih awal</td>
+                        <td>2024-11-01</td>
+                        <td>09.44</td>
+                        <td>Urusan mendadak</td>
+                        <td>Menunggu Konfirmasi</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Lembur -->
+        <div id="lembur" class="page">
+            <h2>Data Lembur karyawan</h2>
+            <button class="add-button">+ Tambah Lembur</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Karyawan</th>
+                        <th>Tanggal Lembur</th>
+                        <th>Jam Lembur</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>K001</td>
+                        <td>2024-11-01</td>
+                        <td>2 Jam</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>K002</td>
+                        <td>2024-11-01</td>
+                        <td>3 Jam</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>K003</td>
+                        <td>2024-11-01</td>
+                        <td>1 Jam</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>K004</td>
+                        <td>2024-11-01</td>
+                        <td>4 Jam</td>
+                        <td>
+                            <i class="fas fa-edit"></i> 
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript function to show selected page
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show the selected page
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

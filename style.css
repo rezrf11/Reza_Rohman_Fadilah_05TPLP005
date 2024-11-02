@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; 
+    color: #444444;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #2d3134; 
+    color: white;
+    width: 260px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    overflow-y: auto;
+    transition: width 0.3s;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Sidebar Title */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fdfdfd; 
+}
+
+/* User Info Section */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border: 2px solid #2700a8; 
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.user-info small {
+    color: #ccc;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.sidebar ul li {
+    margin: 15px 5px;
+   
+}
+
+.sidebar ul li a {
+    color: #ddd; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  
+}
+
+.sidebar ul li a:hover {
+    background: #495057; 
+    color: #ffcc00;
+}
+
+/* Main Content */
+.content {
+    margin-left: 280px; 
+    padding: 20px;
+    width: calc(100% - 280px);
+}
+
+header {
+    background: #007bff; 
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 26px;
+    text-align: center; 
+}
+
+/* Page Management */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 20px; 
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); 
+    color: #333333; 
+    border-radius: 12px; 
+    padding: 20px; 
+    flex: 1 1 1px; 
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Decorative accent lines */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; 
+    background: #007bff; 
+    border-radius: 12px 12px 0 0; 
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); 
+    color: #333333; 
+    border-radius: 12px; 
+    padding: 20px; 
+    flex: 1 1 1px; 
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #007bff; 
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Decorative accent lines */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; 
+    background: #007bff; 
+    border-radius: 12px 12px 0 0; 
+}
+
+/* Icon styling */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; 
+    height: 60px; 
+    margin: 0 auto 10px; 
+    border: 4px solid #007bff; 
+    border-radius: 50%; 
+    background: #ffffff; 
+    transition: background 0.3s, transform 0.3s; 
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Inner border effect for the icon */
+.icon::before {
+    content: '';
+    position: absolute;
+    top: -6px; 
+    left: -6px; 
+    right: -6px; 
+    bottom: -6px; 
+    border-radius: 50%; 
+    border: 2px solid rgba(0, 123, 255, 0.5); 
+    z-index: -1; 
+}
+
+.icon:hover {
+    background: rgba(0, 123, 255, 0.1);
+    transform: scale(1.05); 
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); 
+    color: #333333; 
+    border-radius: 16px; 
+    padding: 20px; 
+    flex: 1 1 1px; 
+    text-align: center;
+    position: relative; 
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    border: 2px solid transparent; 
+    background-clip: padding-box; 
+}
+
+/* Adding an inner border effect */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 16px; 
+    border: 2px solid #007bff; 
+    z-index: -1; 
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Decorative accent lines */
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #007bff, #6610f2); 
+    border-radius: 12px 12px 0 0; 
+}
+
+/* Icon styling */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; 
+    height: 80px; 
+    margin: 0 auto 15px; 
+    border: 4px solid #007bff; 
+    border-radius: 50%; 
+    background: #ffffff; 
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; 
+    position: relative; 
+    z-index: 1; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Inner border effect for the icon */
+.icon::before {
+    content: '';
+    position: absolute;
+    top: -6px; 
+    left: -6px; 
+    right: -6px; 
+    bottom: -6px; 
+    border-radius: 50%; /* Circular shape */
+    border: 2px solid rgba(0, 123, 255, 0.5); /* Semi-transparent inner border */
+    z-index: -1; /* Place behind the icon */
+}
+
+.icon:hover {
+    background: rgba(0, 123, 255, 0.1); 
+    transform: scale(1.1); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Text styles */
+h3 {
+    margin: 10px 0 5px; 
+    font-size: 1.5em; 
+}
+
+p {
+    margin: 0; 
+    font-size: 0.9em; 
+    color: #666; 
+}
+
+.stat-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 123, 255, 0.1); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulse 0.6s ease-out forwards; 
+}
+
+/* Keyframes for pulse effect */
+@keyframes pulse {
+    to {
+        transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+}
+
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card i {
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd; 
+}
+
+table th {
+    background: #007bff; 
+    color: white;
+}
+
+table tr:hover {
+    background: #e9ecef; 
+}
+
+/* Buttons */
+.add-button {
+    background: #28a745; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+
+.add-button:hover {
+    background: #099327; 
+    transform: translateY(-2px); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; 
+    }
+
+    .content {
+        margin-left: 220px; 
+        width: calc(100% - 220px);
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-card {
+        margin: 10px 0;
+    }
+}
